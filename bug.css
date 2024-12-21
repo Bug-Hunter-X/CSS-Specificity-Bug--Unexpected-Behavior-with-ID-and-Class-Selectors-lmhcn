@@ -1,0 +1,17 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+#myElement {
+  color: blue;
+}
+
+.myElement {
+  color: red;
+}
+
+#myElement.myElement {
+  color: green; /* This rule will not override the previous rule */
+}
+```
+
+The expected behavior is that `#myElement.myElement` (the most specific selector) should override both `#myElement` and `.myElement`, resulting in green text. However, due to how specificity works in CSS, this does not happen.
